@@ -1,10 +1,9 @@
 import { useQuery } from "@apollo/client";
 import React, { useEffect, useState } from "react";
-import { LOAD_USERS } from "../graphql/queries";
+import { LOAD_BOOKS } from "../graphql/queries";
 
 export const BookList = () => {
-  const executeQuery = useQuery;
-  const { data } = useQuery(LOAD_USERS);
+  const { data } = useQuery(LOAD_BOOKS);
 
   const [books, setBooks] = useState([]);
 
@@ -14,6 +13,7 @@ export const BookList = () => {
 
   return (
     <div>
+      <h1>BookList</h1>
       {books.map((book) => (
         <section key={book.id}>
           <h3>
@@ -22,6 +22,7 @@ export const BookList = () => {
           <p>by {book?.author?.name}</p>
         </section>
       ))}
+      <hr />
     </div>
   );
 };

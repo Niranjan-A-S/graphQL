@@ -7,7 +7,8 @@ import {
 } from "@apollo/client";
 import { onError } from "@apollo/client/link/error";
 
-import { BookList, Form } from "./components";
+import { BookList, BookForm } from "./components";
+import { AuthorList } from "./components/author-list";
 
 const errorLink = onError(({ graphqlErrors, networkError }) => {
   if (graphqlErrors) {
@@ -34,8 +35,9 @@ const client = new ApolloClient({
 export const App = () => {
   return (
     <ApolloProvider client={client}>
-      <Form />
+      <BookForm />
       <BookList />
+      <AuthorList />
     </ApolloProvider>
   );
 };

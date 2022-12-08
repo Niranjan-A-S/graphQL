@@ -132,7 +132,7 @@ const RootMutationType = new GraphQLObjectType({
           authorId: args.authorId,
         };
         bookList.push(book);
-        return args;
+        return author;
       },
     },
     addAuthor: {

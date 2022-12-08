@@ -2,7 +2,7 @@ import { useMutation } from "@apollo/client";
 import { useCallback, useState } from "react";
 import { ADD_BOOK_MUTATION } from "../graphql/mutations";
 
-export const Form = () => {
+export const BookForm = () => {
   const INITIAL_STATE = { name: "", authorId: 0 };
   const [{ name, authorId }, setBook] = useState(INITIAL_STATE);
 

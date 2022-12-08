@@ -7,10 +7,10 @@ export const ADD_BOOK_MUTATION = gql`
     }
   }
 `;
-
-// export const ADD_AUTHOR_MUTATION = gql`
-// mutation addAuthor() {
-//     addAuthor() {
-
-//     }
-// }`;
+export const ADD_AUTHOR_MUTATION = gql`
+  mutation addAuthor($name: String!) {
+    addAuthor(name: $name) {
+      name
+    }
+  }
+`;

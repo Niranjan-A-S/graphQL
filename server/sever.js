@@ -1,5 +1,6 @@
 const express = require("express");
 const expressGraphQL = require("express-graphql").graphqlHTTP;
+const cors = require("cors");
 const {
   GraphQLSchema,
   GraphQLObjectType,
@@ -10,6 +11,7 @@ const {
 } = require("graphql");
 
 const app = express();
+app.use(cors());
 
 const bookList = [
   { id: 1, name: "Harry Potter and the Chamber of Secrets", authorId: 1 },
@@ -130,7 +132,7 @@ const RootMutationType = new GraphQLObjectType({
           authorId: args.authorId,
         };
         bookList.push(book);
-        return book;
+        return args;
       },
     },
     addAuthor: {
